@@ -15,23 +15,30 @@
   box-shadow: 4px 3px 7px 2px #00000040;
 }
 
-.TodoForm{
-    margin-bottom: 15px;
+.TodoForm {
+  margin-bottom: 15px;
 }
 
-.TodoList{
-    width: 100%;
-    padding: 10px 30px;
-}
-.TodoListItem{
-    padding: 4px 16px;
-    display: flex;
-    justify-content: space-between;
-    font-weight: 500;
-    border-radius: 8px;
-    background-color: #7aa6c28a;
+.TodoList {
+  width: 100%;
+  padding: 10px 30px;
 }
 
-.TodoListItem:not(:last-child){
-    margin-bottom: 5px;
+.false {
+  padding: 4px 16px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  border-radius: 8px;
+  background-color: #7aa6c28a;
+}
+
+.false:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.true {
+  composes: false;
+  background-color: #22952e8a;
+  text-decoration: line-through;
 }
