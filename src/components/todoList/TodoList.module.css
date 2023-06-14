@@ -1,4 +1,5 @@
-.TodoList {
-    width: 100%;
-    padding: 10px 30px;
+.TodoList {   
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #7aa6c2;
 }

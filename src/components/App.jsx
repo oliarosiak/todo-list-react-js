@@ -5,6 +5,7 @@ import css from './App.module.css';
 import TodoForm from './todoForm/TodoForm';
 import TodoList from './todoList/TodoList';
 import TodoListItems from './todoListItems/TodoListItems';
+import TodoCalendar from './calendar/TodoCalendar';
 
 export default function App() {
   const [todoList, setTodoList] = useLocalStorage('userTodoList', []);
@@ -39,11 +40,17 @@ export default function App() {
 
   return (
     <div className={css.App}>
-      <h1>ToDo List</h1>
-      <TodoForm onSubmit={formSubmitHandler}/>
-      <TodoList>
-        <TodoListItems options={todoList} onDeleteBtn={todoDeleteBtn} onChecbox={checkboxTodoHandler} />
-      </TodoList>
+      <div className={css.TodoBlock} >
+        <h1>ToDo List</h1>
+        <TodoForm onSubmit={formSubmitHandler} />
+        <TodoList>
+          <TodoListItems options={todoList} onDeleteBtn={todoDeleteBtn} onChecbox={checkboxTodoHandler} />
+        </TodoList>
+
+      </div>
+      <div className={css.CalendarBlock} >
+        <TodoCalendar />
+      </div>      
     </div>
   );
 }
