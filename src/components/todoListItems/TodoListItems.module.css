@@ -1,0 +1,18 @@
+.false {
+    padding: 4px 16px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    border-radius: 8px;
+    background-color: #7aa6c28a;
+}
+
+.false:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.true {
+    composes: false;
+    background-color: #22952e8a;
+    text-decoration: line-through;
+}
