@@ -3,12 +3,18 @@ import { nanoid } from 'nanoid';
 import css from './App.module.css';
 
 import TodoForm from './todoForm/TodoForm';
+import TodoHeader from './todoHeader/TodoHeader';
 import TodoList from './todoList/TodoList';
 import TodoListItems from './todoListItems/TodoListItems';
 import TodoCalendar from './calendar/TodoCalendar';
 
 export default function App() {
-  const [todoList, setTodoList] = useLocalStorage('userTodoList', []);
+  const [todoList, setTodoList] = useLocalStorage('userTodoList', [
+    { id: 1, todo: 'html', done: false },
+    { id: 2, todo: 'css', done: false },
+    { id: 3, todo: 'JS', done: false },
+    { id: 4, todo: 'react', done: false },
+  ]);
 
   const formSubmitHandler = newTodo => {
     const todoItem = {
@@ -40,17 +46,20 @@ export default function App() {
 
   return (
     <div className={css.App}>
-      <div className={css.TodoBlock} >
-        <h1>ToDo List</h1>
+      <div className={css.TodoBlock}>
+        <TodoHeader/>        
         <TodoForm onSubmit={formSubmitHandler} />
         <TodoList>
-          <TodoListItems options={todoList} onDeleteBtn={todoDeleteBtn} onChecbox={checkboxTodoHandler} />
+          <TodoListItems
+            options={todoList}
+            onDeleteBtn={todoDeleteBtn}
+            onChecbox={checkboxTodoHandler}
+          />
         </TodoList>
-
       </div>
-      <div className={css.CalendarBlock} >
+      <div className={css.CalendarBlock}>
         <TodoCalendar />
-      </div>      
+      </div>
     </div>
   );
 }

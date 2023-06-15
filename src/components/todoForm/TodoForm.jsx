@@ -23,17 +23,19 @@ export default function TodoForm({ onSubmit }) {
     
     return (
         <form onSubmit={submitHandler} className={css.TodoForm}>
-            <label>
+            <label className={css.FormLabel}>
                 <input
                     type="text"
                     placeholder="Add New ToDo"
                     value={newTodo}
                     onChange={inputTodoHandler}
                     name='todo'
+                    className={css.FormInput}
+                    autoComplete="off"
                 ></input>
             </label>
-            <button type="submit">
-                <GrAddCircle />
+            <button type="submit" className={css.FormButton} >                
+                <span className={css.FormButtonImg}><GrAddCircle /> Let's do it!</span>               
             </button>
         </form>
     );
@@ -42,6 +44,3 @@ export default function TodoForm({ onSubmit }) {
 TodoForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
 }
-
-
-

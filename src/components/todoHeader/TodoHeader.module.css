@@ -1,0 +1,19 @@
+.Heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+  margin-bottom: 8px;
+}
+
+.HeadingTitle {
+  transform: rotate(2deg);
+  padding: 0.2rem 1.2rem;
+  border-radius: 20% 5% 20% 5%/5% 20% 25% 20%;
+  background-color: hsla(166, 100%, 50%, 0.7);
+  font-size: 1.5rem;
+}
+
+.HeadingImage {
+  width: 24%; 
+}

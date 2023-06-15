@@ -4,7 +4,8 @@
     justify-content: space-between;
     font-weight: 500;
     border-radius: 8px;
-    background-color: #7aa6c28a;
+   
+    background-color: #00c3ff89;
 }
 
 .false:not(:last-child) {
@@ -13,6 +14,6 @@
 
 .true {
     composes: false;
-    background-color: #22952e8a;
+    background-color: hsla(166, 100%, 50%, 0.7);
     text-decoration: line-through;
 }
