@@ -10,10 +10,10 @@ import TodoCalendar from './calendar/TodoCalendar';
 
 export default function App() {
   const [todoList, setTodoList] = useLocalStorage('userTodoList', [
-    { id: 1, todo: 'html', done: false },
-    { id: 2, todo: 'css', done: false },
-    { id: 3, todo: 'JS', done: false },
-    { id: 4, todo: 'react', done: false },
+    { id: '1', todo: 'html', done: false },
+    { id: '2', todo: 'css', done: false },
+    { id: '3', todo: 'JS', done: false },
+    { id: '4', todo: 'react', done: false },
   ]);
 
   const formSubmitHandler = newTodo => {
@@ -22,6 +22,7 @@ export default function App() {
       todo: newTodo,
       done: false,
     };
+    console.log(typeof (todoItem.id));
 
     const sortedPrevTodo = [...todoList].sort((a, b) => a.done - b.done);
     setTodoList([todoItem, ...sortedPrevTodo]);
