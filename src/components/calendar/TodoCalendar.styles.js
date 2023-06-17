@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const CalendarContainer = styled.div`
   /* ~~~ container styles ~~~ */
   padding: 16px 8px;
+  margin-bottom: 12px;
   background: #f1f5f8;
   background-image: radial-gradient(#bfc0c1 7.2%, transparent 0);
   background-size: 25px 25px;
